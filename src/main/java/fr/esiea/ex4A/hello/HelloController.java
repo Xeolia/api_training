@@ -1,9 +1,10 @@
 package fr.esiea.ex4A.hello;
 
+import fr.esiea.ex4A.User;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 class HelloController {
@@ -23,5 +24,10 @@ class HelloController {
             helloData = helloRepository.getHelloFor(name);
         }
         return helloData;
+    }
+    @PostMapping(path = "/saveData", produces = MediaType.APPLICATION_JSON_VALUE)
+    Boolean saveData(@RequestBody Map<String, String> param) {
+        User user = new User(param.get("userEmail"),param.get("userName"),param.get("userTweeter"),param.get("userCountry"),param.get("userSex"),param.get("userSexPref") );
+        return helloRepository.stored(user);
     }
 }
