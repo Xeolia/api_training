@@ -37,8 +37,7 @@ class HelloRepository {
     Boolean stored(User user){
         for (User monUser:userList) {
             if(monUser.getUserTweeter().equals(user.getUserTweeter()))
-                return false;
-        }
+                return false; }
         userList.add(user);
         return true;
     }

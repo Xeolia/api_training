@@ -7,59 +7,37 @@ class UserTest {
 
     @Test
     void getUserEmail() {
-
-    }
-
-    @Test
-    void setUserEmail() {
+        User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
+        Assertions.assertEquals("serrier@et.esiea.fr", user.getUserEmail());
     }
 
     @Test
     void getUserName() {
-
-    }
-
-    @Test
-    void setUserName() {
+        User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
+        Assertions.assertEquals("Alexia", user.getUserName());
     }
 
     @Test
     void getUserTweeter() {
-    }
-
-    @Test
-    void setUserTweeter() {
+        User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
+        Assertions.assertEquals("Xeolia", user.getUserTweeter());
     }
 
     @Test
     void getUserCountry() {
-    }
-
-    @Test
-    void setUserCountry() {
+        User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
+        Assertions.assertEquals("Fr", user.getUserCountry());
     }
 
     @Test
     void getUserSex() {
-    }
-
-    @Test
-    void setUserSex() {
+        User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
+        Assertions.assertEquals("F", user.getUserSex());
     }
 
     @Test
     void getUserSexPref() {
-    }
-
-    @Test
-    void setUserSexPref() {
-    }
-
-    @Test
-    void getAdditionalProperties() {
-    }
-
-    @Test
-    void setAdditionalProperty() {
+        User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
+        Assertions.assertEquals("H", user.getUserSexPref());
     }
 }
