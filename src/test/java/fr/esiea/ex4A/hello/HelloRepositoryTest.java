@@ -1,9 +1,12 @@
 package fr.esiea.ex4A.hello;
 
+import fr.esiea.ex4A.User;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class HelloRepositoryTest {
@@ -30,4 +33,12 @@ class HelloRepositoryTest {
 
         assertThat(helloData.name).isEqualTo(expectedOutputName);
     }
+
+    @Test
+    void stored(){
+        User user = new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
+        Assertions.assertEquals(true, helloRepository.stored(user));
+        Assertions.assertEquals(false, helloRepository.stored(user));
+    }
+
 }
