@@ -1,5 +1,6 @@
 package fr.esiea.ex4A.hello;
 
+import fr.esiea.ex4A.Matches;
 import fr.esiea.ex4A.User;
 import org.springframework.stereotype.Repository;
 
