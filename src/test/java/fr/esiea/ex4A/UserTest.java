@@ -6,6 +6,16 @@ import org.junit.jupiter.api.Test;
 class UserTest {
 
     @Test
+    void User(){
+        User user =new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
+        Assertions.assertNotNull(user.getUserEmail());
+        Assertions.assertNotNull(user.getUserName());
+        Assertions.assertNotNull(user.getUserTweeter());
+        Assertions.assertNotNull(user.getUserCountry());
+        Assertions.assertNotNull(user.getUserSex());
+        Assertions.assertNotNull(user.getUserSexPref());
+    }
+    @Test
     void getUserEmail() {
         User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
         Assertions.assertEquals("serrier@et.esiea.fr", user.getUserEmail());
