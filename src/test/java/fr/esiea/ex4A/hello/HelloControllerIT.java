@@ -1,13 +1,23 @@
 package fr.esiea.ex4A.hello;
 
+import fr.esiea.ex4A.Matches;
+import fr.esiea.ex4A.User;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.CoreMatchers.endsWith;
 import static org.hamcrest.CoreMatchers.startsWith;
@@ -29,7 +39,7 @@ class HelloControllerIT {
         this.mockMvc = mockMvc;
     }
 
-/*    @Test
+    @Test
     void hello_delegates_to_repository_when_name_param_is_present() throws Exception {
         when(repository.getHelloFor(any())).thenReturn(new HelloData("test"));
 
@@ -45,7 +55,7 @@ class HelloControllerIT {
                         """));
 
         verify(repository).getHelloFor("test");
-    }*/
+    }
 
     @Test
     void hello_delegates_to_random_when_name_param_is_absent() throws Exception {
@@ -60,5 +70,40 @@ class HelloControllerIT {
             .andExpect(jsonPath("$.completeSentence").value(allOf(startsWith("hello"), endsWith("!"))));
 
         verify(repository).randomHello();
+    }
+
+    @Test
+    void data_it_should_return() throws Exception{
+
+        when(repository.stored(any())).thenReturn(true);
+
+        mockMvc
+            .perform(MockMvcRequestBuilders.post("/saveData").contentType(MediaType.APPLICATION_JSON_VALUE).content("""
+                {
+                    "userEmail": "machin@truc.com",
+                    "userName": "machin",
+                    "userTweeter": "machin45",
+                    "userCountry": "FR",
+                    "userSex": "M",
+                    "userSexPref": "M"
+                    }
+                """));
+    }
+
+    @Test
+    void match_return_match_data() throws Exception {
+
+        mockMvc
+            .perform(MockMvcRequestBuilders.get("/api/matches?userName=Alexia&userCountry=Fr"))
+            .andDo(MockMvcResultHandlers.print())
+            .andExpect(status().isOk())
+            .andExpect(content().json("""
+                [
+                    {
+                        "name": "Alexia",
+                        "twitter": "Xeolia"
+                    }
+                ]
+                """));
     }
 }
