@@ -83,6 +83,7 @@
         xhr.onreadystatechange = () => {
             document.location.href = "/home.html?name=" + encodeURIComponent(formData.userName) + "&country=" + encodeURIComponent(formData.userCountry);
         };
+        xhr.send(JSON.stringify(formData));
     }
 
     document.getElementById('inscription').onsubmit = function() {
