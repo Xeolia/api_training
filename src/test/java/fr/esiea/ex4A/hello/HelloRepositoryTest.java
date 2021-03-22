@@ -35,7 +35,8 @@ class HelloRepositoryTest {
     }
 
     @Test
-    void is_stored(){
+    void stored(){
+
         User user = new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
         Assertions.assertEquals(true, helloRepository.stored(user));
         Assertions.assertEquals(false, helloRepository.stored(user));
