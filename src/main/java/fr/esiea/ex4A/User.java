@@ -1,6 +1,7 @@
 package fr.esiea.ex4A;
 
-import  java.util.HashMap;
+
+import java.util.HashMap;
 import java.util.Map;
 
 public class User {
