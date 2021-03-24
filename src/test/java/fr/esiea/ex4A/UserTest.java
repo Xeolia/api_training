@@ -8,46 +8,46 @@ class UserTest {
     @Test
     void User(){
         User user =new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertNotNull(user.getUserEmail());
-        Assertions.assertNotNull(user.getUserName());
-        Assertions.assertNotNull(user.getUserTweeter());
-        Assertions.assertNotNull(user.getUserCountry());
-        Assertions.assertNotNull(user.getUserSex());
-        Assertions.assertNotNull(user.getUserSexPref());
+        Assertions.assertNotNull(user.userEmail);
+        Assertions.assertNotNull(user.userName);
+        Assertions.assertNotNull(user.userTweeter);
+        Assertions.assertNotNull(user.userCountry);
+        Assertions.assertNotNull(user.userSex);
+        Assertions.assertNotNull(user.userSexPref);
     }
     @Test
     void getUserEmail() {
         User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertEquals("serrier@et.esiea.fr", user.getUserEmail());
+        Assertions.assertEquals("serrier@et.esiea.fr", user.userEmail);
     }
 
     @Test
     void getUserName() {
         User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertEquals("Alexia", user.getUserName());
+        Assertions.assertEquals("Alexia", user.userName);
     }
 
     @Test
     void getUserTweeter() {
         User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertEquals("Xeolia", user.getUserTweeter());
+        Assertions.assertEquals("Xeolia", user.userTweeter);
     }
 
     @Test
     void getUserCountry() {
         User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertEquals("Fr", user.getUserCountry());
+        Assertions.assertEquals("Fr", user.userCountry);
     }
 
     @Test
     void getUserSex() {
         User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertEquals("F", user.getUserSex());
+        Assertions.assertEquals("F", user.userSex);
     }
 
     @Test
     void getUserSexPref() {
         User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertEquals("H", user.getUserSexPref());
+        Assertions.assertEquals("H", user.userSexPref);
     }
 }

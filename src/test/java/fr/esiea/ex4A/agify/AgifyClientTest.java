@@ -22,9 +22,9 @@ class AgifyClientTest {
 
         Call<AgifyUser> agifyUserCall = agifyClient.userList("Alexia","US");
         AgifyUser agifyUser = agifyUserCall.execute().body();
-        Assertions.assertEquals("Alexia", agifyUser.getName());
-        Assertions.assertEquals(47, agifyUser.getAge());
-        Assertions.assertEquals(6, agifyUser.getCount());
-        Assertions.assertEquals("US", agifyUser.getCountryId());
+        Assertions.assertEquals("Alexia", agifyUser.name);
+        Assertions.assertEquals(47, agifyUser.age);
+        Assertions.assertEquals(6, agifyUser.count);
+        Assertions.assertEquals("US", agifyUser.country_id);
     }
 }

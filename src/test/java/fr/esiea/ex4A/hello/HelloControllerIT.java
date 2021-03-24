@@ -39,7 +39,7 @@ class HelloControllerIT {
         this.mockMvc = mockMvc;
     }
 
-/*    @Test
+    @Test
     void hello_delegates_to_repository_when_name_param_is_present() throws Exception {
         when(repository.getHelloFor(any())).thenReturn(new HelloData("test"));
 
@@ -55,7 +55,7 @@ class HelloControllerIT {
                         """));
 
         verify(repository).getHelloFor("test");
-    }*/
+    }
 
     @Test
     void hello_delegates_to_random_when_name_param_is_absent() throws Exception {
@@ -78,7 +78,7 @@ class HelloControllerIT {
         when(repository.stored(any())).thenReturn(true);
 
         mockMvc
-            .perform(MockMvcRequestBuilders.post("/saveData").contentType(MediaType.APPLICATION_JSON_VALUE).content("""
+            .perform(MockMvcRequestBuilders.post("/api/inscription").contentType(MediaType.APPLICATION_JSON_VALUE).content("""
                 {
                     "userEmail": "machin@truc.com",
                     "userName": "machin",
