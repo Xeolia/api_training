@@ -9,19 +9,8 @@ class MatchesTest {
 
     @Test
     void Matches(){
-        User user = new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertEquals("Alexia",user.getUserName());
-        Assertions.assertEquals("Xeolia",user.getUserTweeter());
-    }
-    @Test
-    void getName() {
-        User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertEquals("Alexia", user.getUserName());
-    }
-
-    @Test
-    void getTwitter() {
-        User user= new User("serrier@et.esiea.fr","Alexia","Xeolia","Fr","F","H");
-        Assertions.assertEquals("Xeolia", user.getUserTweeter());
+        Matches matches = new Matches("Alexia","Xeolia");
+        Assertions.assertEquals("Alexia",matches.name);
+        Assertions.assertEquals("Xeolia",matches.twitter);
     }
 }

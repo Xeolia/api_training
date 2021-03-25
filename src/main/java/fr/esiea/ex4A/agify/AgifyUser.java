@@ -4,42 +4,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 public class AgifyUser {
-    @JsonPropertyOrder({
-        "name",
-        "age",
-        "count",
-        "country_id"
-    })
-        @JsonProperty("name")
-        private String name;
-        @JsonProperty("age")
-        private Integer age;
-        @JsonProperty("count")
-        private Integer count;
-        @JsonProperty("country_id")
-        private String countryId;
+    public final String name;
+    public final int age;
+    public final int count;
+    public final String country_id;
 
-    @JsonProperty("name")
-        public String getName() {
-            return name;
-        }
-
-
-        @JsonProperty("age")
-        public Integer getAge() {
-            return age;
-        }
-
-
-        @JsonProperty("count")
-        public Integer getCount() {
-            return count;
-        }
-
-
-        @JsonProperty("country_id")
-        public String getCountryId() {
-            return countryId;
-        }
+    public AgifyUser(@JsonProperty("name") String name,
+                     @JsonProperty("age") int age,
+                     @JsonProperty("count") int count,
+                     @JsonProperty("country_id") String country_id) {
+        this.name = name;
+        this.age = age;
+        this.count = count;
+        this.country_id = country_id;
+    }
 
 }
